@@ -16,7 +16,7 @@ $(document).on("pageshow", function () {
         var filter = ["displayName", "phoneNumbers"];
         navigator.contacts.find(filter, onSuccess, onError, options);
     } else if ($("#addContact").length == 1) {
-        bindAddContactEvents();
+       // bindAddContactEvents();
     }
 });
 
