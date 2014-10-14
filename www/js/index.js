@@ -71,7 +71,6 @@ var app = {
 				  'images/anim/explosion.png'
 				];
 
-				var my_media = null;
 				var soundUrl = "sounds/button-7.mp3";
 				var xSPath = "sounds/explosion-04_2sec.mp3";
 				var xSPathChute = "sounds/button_6.mp3";
@@ -592,8 +591,6 @@ var app = {
 						}
 						$('#zone_message').append('<a target="_blank" href="#" class="button">More games</a>');
 						$('#zone_message').append('<div class="button bt_new_game">What would U do about what has just happened to U? <br/><a target="_blank" href="#" class="button">Retry</a><a target="_blank" href="#" class="button">Give Up</a></div>');
-				stopAudio();
-				releaseAudio();
 				PlaySound(xSPathEnd);
 					  }
 					}    
@@ -1147,37 +1144,29 @@ var app = {
 				  _loadAllImages(callback);
 				}
 				//With that being said, you are better off creating a directive since dom manipulation inside of a controller is against angular's ideals.
-				function PlaySound(src) {
-					// Create Media object from src
-					my_media = new Media(src, onSuccess, onError);
-
-					// Play audio
-					my_media.play();
-
+				function PlaySound(sPath) {
+				  var audioElement = document.createElement('audio');
+				  audioElement.setAttribute('src', sPath);
+				  audioElement.play();
 				}
-				function PlayBodySound(src) {
-					// Create Media object from src
-					my_media = new Media(src, onSuccess, onError);
 
-					// Play audio
-					my_media.play();
-					setTimeout(function () {
-					PlaySound1(src);
+				function PlayBodySound(sPath) {
+				  var audioElement = document.createElement('audio');
+				  audioElement.setAttribute('src', sPath);
+				  audioElement.play();
+				  setTimeout(function () {
+					PlaySound1(sPath);
 				  }, 130000);
-
 				}
-				function PlaySound1(src) {
-					// Create Media object from src
-					my_media = new Media(src, onSuccess, onError);
 
-					// Play audio
-					my_media.play();
-					setTimeout(function () {
-					PlayBodySound(src);
+				function PlaySound1(sPath) {
+				  var audioElement = document.createElement('audio');
+				  audioElement.setAttribute('src', sPath);
+				  audioElement.play();
+				  setTimeout(function () {
+					PlayBodySound(sPath);
 				  }, 130000);
-
 				}
-
 
 				function DispInfo(info){
 				PlaySound(xSPathHyperC);
@@ -1185,33 +1174,6 @@ var app = {
 						  setTimeout(function () {
 							$('#zone_message').html('');
 						  }, 9000);
-				}
-				////////////////////////////////////
-				
-
-
-				// Stop audio
-				function stopAudio() {
-					if (my_media) {
-						my_media.stop();
-					}
-				}
-				function releaseAudio() {
-						my_media.release();
-				}
-				
-
-				// onSuccess Callback
-				//
-				function onSuccess() {
-				  //  console.log("playAudio():Audio Success");
-				}
-
-				// onError Callback 
-				//
-				function onError(error) {
-				  //  alert('code: '    + error.code    + '\n' + 
-				  //        'message: ' + error.message + '\n');
 				}
     }
 };
