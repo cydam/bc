@@ -15,18 +15,6 @@
                         {
                             "xml": "<feature name=\"Media\"><param name=\"android-package\" value=\"org.apache.cordova.media.AudioHandler\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" onload=\"true\" value=\"org.apache.cordova.statusbar.StatusBar\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -60,18 +48,6 @@
             "PACKAGE_NAME": "com.phonegap.hello_world"
         },
         "org.apache.cordova.media": {
-            "PACKAGE_NAME": "com.phonegap.hello_world"
-        },
-        "org.apache.cordova.console": {
-            "PACKAGE_NAME": "com.phonegap.hello_world"
-        },
-        "org.apache.cordova.device": {
-            "PACKAGE_NAME": "com.phonegap.hello_world"
-        },
-        "org.apache.cordova.inappbrowser": {
-            "PACKAGE_NAME": "com.phonegap.hello_world"
-        },
-        "org.apache.cordova.statusbar": {
             "PACKAGE_NAME": "com.phonegap.hello_world"
         }
     },
